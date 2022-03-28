@@ -1,0 +1,69 @@
+use horasextradb;
+
+DROP TABLE IF EXISTS `perfiles`;
+CREATE TABLE `Perfiles` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `perfil` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE `Usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `apellido` varchar(45) NOT NULL,
+  `legajo` int NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `estatus` int NOT NULL DEFAULT '1',
+  `horarioEntrada` time NOT NULL,
+  `horarioSalida` time NOT NULL,
+  `idPerfil` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `legajo_UNIQUE` (`legajo`),
+  KEY `fk_usuarios_perfiles1_idx` (`idPerfil`),
+  CONSTRAINT `fk_usuarios_perfiles1` FOREIGN KEY (`idPerfil`) REFERENCES `perfiles` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `horas`;
+CREATE TABLE `horas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `horaEntrada` time NOT NULL,
+  `horaSalida` time NOT NULL,
+  `horaExtra` time NOT NULL,
+  `estatus` enum('Creada','Aprobada','Reprobada') NOT NULL,
+  `comentario` text,
+  `comentarioSup` text,
+  `nLegajo` int not null,
+  PRIMARY KEY (`id`),
+  KEY `fk_horas_usuarios1_idx` (`nLegajo`),
+  CONSTRAINT `fk_horas_usuarios1` FOREIGN KEY (`nLegajo`) REFERENCES `usuarios` (`legajo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `historicos`;
+CREATE TABLE `historicos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(250) NOT NULL,
+  `fecha` date NOT NULL,
+  `idHoras` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_historico_horas1_idx` (`idHoras`),
+  CONSTRAINT `fk_historico_horas1` FOREIGN KEY (`idHoras`) REFERENCES `horas` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `eventos`;
+CREATE TABLE `eventos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(250) NOT NULL,
+  `abreviatura` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `config`;
+CREATE TABLE `config` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `diaInicio` varchar(250) NOT NULL,
+  `diaFin` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
