@@ -1,0 +1,5 @@
+INSERT INTO `perfiles` VALUES (1, 'ADMINISTRADOR');
+INSERT INTO `perfiles` VALUES (2, 'SUPERVISOR');
+INSERT INTO `perfiles` VALUES (3, 'USER');
+
+select * from perfiles;
