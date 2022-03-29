@@ -16,8 +16,8 @@ CREATE TABLE `Usuarios` (
   `username` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
   `estatus` int NOT NULL DEFAULT '1',
-  `horarioEntrada` time NOT NULL,
-  `horarioSalida` time NOT NULL,
+  `horarioEntrada` date NOT NULL,
+  `horarioSalida` date NOT NULL,
   `idPerfil` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `legajo_UNIQUE` (`legajo`),
@@ -29,9 +29,9 @@ DROP TABLE IF EXISTS `horas`;
 CREATE TABLE `horas` (
   `id` int NOT NULL AUTO_INCREMENT,
   `fecha` date NOT NULL,
-  `horaEntrada` time NOT NULL,
-  `horaSalida` time NOT NULL,
-  `horaExtra` time NOT NULL,
+  `horaEntrada` date NOT NULL,
+  `horaSalida` date NOT NULL,
+  `horaExtra` date NOT NULL,
   `estatus` enum('Creada','Aprobada','Reprobada') NOT NULL,
   `comentario` text,
   `comentarioSup` text,
@@ -63,7 +63,7 @@ CREATE TABLE `eventos` (
 DROP TABLE IF EXISTS `config`;
 CREATE TABLE `config` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `diaInicio` varchar(250) NOT NULL,
-  `diaFin` varchar(50) NOT NULL,
+  `diaInicio` date NOT NULL,
+  `diaFin` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
