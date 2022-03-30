@@ -30,8 +30,15 @@ public class Hora {
 	private String comentarioSup;
 	
 	@ManyToOne
-	@JoinColumn(name="legajo")
+	@JoinColumn(name="nLegajo")
 	private Usuario usuario;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
 	public Integer getId() {
 		return id;
@@ -83,5 +90,11 @@ public class Hora {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Hora [id=" + id + ", fecha=" + fecha + ", horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida
+				+ ", horaExtra=" + horaExtra + ", estatus=" + estatus + ", comentario=" + comentario
+				+ ", comentarioSup=" + comentarioSup + ", usuario=" + usuario + "]";
+	}
 	
 }
