@@ -7,7 +7,7 @@ import com.carga.horas.api.model.Hora;
 public interface I_HorasInterface {
 
 	List<Hora> buscarTodas();
-	List<Hora> buscarPorLegajo();
+	Hora buscarPorLegajo(int nLegajo);
 	Hora buscarPorId(Integer idHora);
 	void guardar(Hora hora);
 	void eliminar(Integer idHora);

@@ -18,10 +18,10 @@ public class HorasService implements I_HorasInterface{
 	public List<Hora> buscarTodas() {
 		return horaRepo.findAll();
 	}
-
+	
 	@Override
-	public List<Hora> buscarPorLegajo() {
-		return horaRepo.findByLegajo(0);
+	public Hora buscarPorLegajo(int nLegajo) {
+		return horaRepo.findByLegajo(nLegajo);
 	}
 
 	@Override
@@ -44,5 +44,6 @@ public class HorasService implements I_HorasInterface{
 		horaRepo.deleteById(idHora);
 		
 	}
+
 
 }
