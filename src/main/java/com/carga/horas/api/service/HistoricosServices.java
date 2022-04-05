@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.carga.horas.api.interfaces.I_HistoricosInterface;
 import com.carga.horas.api.jpa.repository.I_HistoricosRepository;
 import com.carga.horas.api.model.Historico;
 
+@Service
 public class HistoricosServices implements I_HistoricosInterface{
 
 	

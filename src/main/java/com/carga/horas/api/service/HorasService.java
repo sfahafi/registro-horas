@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.carga.horas.api.interfaces.I_HorasInterface;
 import com.carga.horas.api.jpa.repository.I_HorasRepository;
 import com.carga.horas.api.model.Hora;
 
+@Service
 public class HorasService implements I_HorasInterface{
 
 	@Autowired
