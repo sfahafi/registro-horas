@@ -29,8 +29,9 @@ public class Hora {
 	private String comentario;
 	private String comentarioSup;
 	
+	@Transient
 	@ManyToOne
-	@JoinColumn(name="nLegajo")
+	@JoinColumn(name="nLegajo", referencedColumnName = "legajo")
 	private Usuario usuario;
 	
 	public Usuario getUsuario() {

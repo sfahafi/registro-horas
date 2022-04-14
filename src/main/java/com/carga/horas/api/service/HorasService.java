@@ -21,10 +21,12 @@ public class HorasService implements I_HorasInterface{
 		return horaRepo.findAll();
 	}
 	
+	/*
 	@Override
 	public Hora buscarPorLegajo(int nLegajo) {
 		return horaRepo.findByLegajo(nLegajo);
 	}
+	*/
 
 	@Override
 	public Hora buscarPorId(Integer idHora) {

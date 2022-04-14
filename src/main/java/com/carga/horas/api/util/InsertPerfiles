@@ -5,18 +5,6 @@ INSERT INTO `perfiles` VALUES (3, 'USER');
 select * from perfiles;
 
 
-INSERT INTO `usuarios` VALUES (1, 'Sharbel', 'Fahafi', 6, 'sfahafi', 'admin', 1, '09:00:00', '18:00:00', 3);
+INSERT INTO `usuarios` VALUES (1, 'Sharbel', 'Fahafi', 6, 'sfahafi', 'admin', 1, '09:00', '18:00', 3);
 
-
-
-
-`id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `apellido` varchar(45) NOT NULL,
-  `legajo` int NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `estatus` int NOT NULL DEFAULT '1',
-  `horarioEntrada` date NOT NULL,
-  `horarioSalida` date NOT NULL,
-  `idPerfil` int NOT NULL,
+INSERT INTO `horas` VALUES (1, '2022-04-14', '09:00', '20:00', '02:00', 'Aprobada', 'Ayuda confirmacion de paquetes', 'Revisado', '6');

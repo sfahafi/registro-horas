@@ -12,8 +12,8 @@ public class Perfil {
 	
 	private String perfil;
 	
-	@OneToOne(mappedBy = "perfil", cascade = CascadeType.ALL)
-	//@JoinColumn(name="idUsuario")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="idUsuario", referencedColumnName = "id")
 	private Usuario usuario;
 
 	public Integer getId() {

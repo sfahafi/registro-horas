@@ -24,8 +24,8 @@ public class Usuario {
 	@Temporal(TemporalType.TIME)
 	private Date horarioSalida;
 	
-	@OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
-	//@JoinColumn(name="idPerfil")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="idPerfil", referencedColumnName = "id")
 	private Perfil perfil;
 
 	public Integer getId() {

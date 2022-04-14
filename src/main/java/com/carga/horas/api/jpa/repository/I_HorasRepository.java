@@ -6,6 +6,6 @@ import com.carga.horas.api.model.Hora;
 
 public interface I_HorasRepository extends JpaRepository<Hora, Integer>{
 
-	Hora findByLegajo(int nLegajo);
+	//Hora findByLegajo(int nLegajo);
 	
 }
