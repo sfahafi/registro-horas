@@ -3,7 +3,8 @@ INSERT INTO `perfiles` VALUES (2, 'SUPERVISOR');
 INSERT INTO `perfiles` VALUES (3, 'USER');
 
 select * from perfiles;
-
+select * from usuarios;
+select * from horas;
 
 INSERT INTO `usuarios` VALUES (1, 'Sharbel', 'Fahafi', 6, 'sfahafi', 'admin', 1, '09:00', '18:00', 3);
 

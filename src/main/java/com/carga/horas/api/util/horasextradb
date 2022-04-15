@@ -1,14 +1,14 @@
 use horasextradb;
 
 DROP TABLE IF EXISTS `perfiles`;
-CREATE TABLE `Perfiles` (
+CREATE TABLE `perfiles` (
   `id` int NOT NULL AUTO_INCREMENT,
   `perfil` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE `Usuarios` (
+CREATE TABLE `usuarios` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,

@@ -31,15 +31,23 @@ public class Hora {
 	
 	@Transient
 	@ManyToOne
-	@JoinColumn(name="nLegajo", referencedColumnName = "legajo")
+	@JoinColumn(name="idUsuario", referencedColumnName = "id")
 	private Usuario usuario;
+	
+	/*
+	public Integer getNlegajo() {
+		return usuario.getLegajo();
+	}
+	*/
 	
 	public Usuario getUsuario() {
 		return usuario;
 	}
+	
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	
 	
 	public Integer getId() {
 		return id;
